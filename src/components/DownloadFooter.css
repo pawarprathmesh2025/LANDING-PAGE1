@@ -26,9 +26,10 @@
 .download-title {
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
-  color: #4da85b;
+  color: #000000;   /* black */
   margin-bottom: 20px;
 }
+
 
 .download-subtitle {
   font-size: clamp(16px, 3vw, 22px);
