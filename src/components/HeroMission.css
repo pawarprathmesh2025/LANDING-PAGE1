@@ -1,0 +1,120 @@
+.hero {
+  background: linear-gradient(120deg, #ffffff 60%, #ffffff);
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 24px 40px;
+}
+
+/* GRID */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+/* 🔥 NEW TOP TITLE */
+.company-title {
+  font-size: 62px;
+  font-weight: 700;
+  color: #12100e;
+  margin-bottom: 5px;
+}
+
+
+.company-title span {
+  display: inline-block;
+}
+
+.badge {
+  background: #eaf7f1;
+  color: #12100e;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+/* HEADING */
+.hero h1 {
+  font-size: 36px;
+  margin: 24px 0;
+  line-height: 1.2;
+  font-weight:600;
+}
+
+.hero h1 span {
+  display: inline-block;
+}
+
+.highlight {
+  color: #0c0c0c;
+}
+
+/* TEXT */
+.hero p {
+  color: #555;
+  font-size: 16px;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* IMAGE */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin-left: auto;
+  z-index: 2;
+  position: relative;
+}
+
+/* GLOW EFFECT */
+.image-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(10,156,140,0.35), transparent 70%);
+  filter: blur(40px);
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin: 40px auto 0;
+    max-width: 420px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .company-title {
+    font-size: 34px;
+  }
+
+  .image-glow {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
