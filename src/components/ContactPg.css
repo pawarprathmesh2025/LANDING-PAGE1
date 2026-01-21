@@ -1,35 +1,30 @@
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 /* ================= PAGE WRAPPER ================= */
 .contact-wrapper {
   display: flex;
   min-height: 90vh;
   width: 100%;
+  opacity: 1; /* ✅ NEVER invisible */
   background: linear-gradient(120deg, #ffffff, #f6fff8);
-  animation: pageReveal 1s ease forwards;
+  animation: contact-pageReveal 1s ease;
 }
 
 /* ================= LEFT SECTION ================= */
-.contact-left {
+.contact-wrapper .contact-left {
   width: 33%;
   padding: 69px 50px;
   background: linear-gradient(135deg, #48c552, #6ae57a);
   color: white;
-  animation: slideLeft 1s ease forwards, glowPulse 6s infinite alternate;
+  animation: contact-slideLeft 1s ease,
+             contact-glowPulse 6s infinite alternate;
 }
 
-.contact-left h2 {
+.contact-wrapper .contact-left h2 {
   font-size: 36px;
   margin-bottom: 12px;
-  animation: textFloat 5s ease-in-out infinite;
+  animation: contact-textFloat 5s ease-in-out infinite;
 }
 
-.subtitle {
+.contact-wrapper .subtitle {
   font-size: 15px;
   margin-bottom: 45px;
   max-width: 420px;
@@ -38,7 +33,7 @@
 }
 
 /* ================= INFO CARDS ================= */
-.info-card {
+.contact-wrapper .info-card {
   background: white;
   color: #333;
   display: flex;
@@ -49,16 +44,16 @@
   align-items: flex-start;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  animation: cardReveal 0.8s ease forwards;
+  opacity: 1; /* ✅ visible even if animation fails */
+  animation: contact-cardReveal 0.8s ease;
 }
 
-.info-card:nth-child(1) { animation-delay: 0.3s; }
-.info-card:nth-child(2) { animation-delay: 0.45s; }
-.info-card:nth-child(3) { animation-delay: 0.6s; }
-.info-card:nth-child(4) { animation-delay: 0.75s; }
+.contact-wrapper .info-card:nth-child(1) { animation-delay: 0.3s; }
+.contact-wrapper .info-card:nth-child(2) { animation-delay: 0.45s; }
+.contact-wrapper .info-card:nth-child(3) { animation-delay: 0.6s; }
+.contact-wrapper .info-card:nth-child(4) { animation-delay: 0.75s; }
 
-.info-card::before {
+.contact-wrapper .info-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -72,49 +67,49 @@
   transition: opacity 0.4s ease;
 }
 
-.info-card:hover::before {
+.contact-wrapper .info-card:hover::before {
   opacity: 1;
 }
 
-.info-card:hover {
+.contact-wrapper .info-card:hover {
   transform: translateY(-12px) scale(1.04);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-.info-card .icon {
+.contact-wrapper .info-card .icon {
   font-size: 22px;
-  animation: iconFloat 4s ease-in-out infinite;
+  animation: contact-iconFloat 4s ease-in-out infinite;
 }
 
-.info-card h4 {
+.contact-wrapper .info-card h4 {
   font-size: 16px;
   font-weight: 600;
 }
 
-.info-card p {
+.contact-wrapper .info-card p {
   margin-top: 6px;
   font-size: 14px;
   line-height: 1.6;
 }
 
 /* ================= RIGHT SECTION ================= */
-.contact-right {
+.contact-wrapper .contact-right {
   width: 67%;
   padding: 63px 130px;
   background: #f9fafb;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  animation: slideRight 1s ease forwards;
+  animation: contact-slideRight 1s ease;
 }
 
 /* ================= HEADING ================= */
-.contact-right h2 {
+.contact-wrapper .contact-right h2 {
   font-size: 34px;
   margin-bottom: 6px;
 }
 
-.contact-right p {
+.contact-wrapper .contact-right p {
   font-size: 15px;
   color: #666;
   margin-bottom: 28px;
@@ -122,18 +117,18 @@
 }
 
 /* ================= FORM BOX ================= */
-form {
+.contact-wrapper form {
   width: 100%;
   max-width: 670px;
   background: white;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
-  animation: formPop 1.1s cubic-bezier(0.25, 1, 0.3, 1);
+  animation: contact-formPop 1.1s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
 /* ================= LABELS ================= */
-label {
+.contact-wrapper label {
   display: block;
   margin: 18px 0 8px;
   font-weight: 600;
@@ -141,8 +136,8 @@ label {
 }
 
 /* ================= INPUTS ================= */
-input,
-textarea {
+.contact-wrapper input,
+.contact-wrapper textarea {
   width: 100%;
   padding: 16px;
   border-radius: 12px;
@@ -152,21 +147,21 @@ textarea {
   transition: all 0.3s ease;
 }
 
-input:focus,
-textarea:focus {
+.contact-wrapper input:focus,
+.contact-wrapper textarea:focus {
   border-color: #48c552;
   box-shadow: 0 0 0 4px rgba(72, 197, 82, 0.25);
   transform: translateY(-2px);
 }
 
 /* ================= TEXTAREA ================= */
-textarea {
+.contact-wrapper textarea {
   min-height: 170px;
   resize: none;
 }
 
 /* ================= BUTTON ================= */
-button {
+.contact-wrapper button {
   margin-top: 32px;
   width: 100%;
   padding: 18px;
@@ -181,7 +176,7 @@ button {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-button::after {
+.contact-wrapper button::after {
   content: "";
   position: absolute;
   width: 300%;
@@ -193,56 +188,56 @@ button::after {
   transition: opacity 0.4s ease;
 }
 
-button:hover::after {
+.contact-wrapper button:hover::after {
   opacity: 1;
 }
 
-button:hover {
+.contact-wrapper button:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(72, 197, 82, 0.45);
 }
 
-button:active {
+.contact-wrapper button:active {
   transform: scale(0.96);
 }
 
 /* ================= ANIMATIONS ================= */
-@keyframes pageReveal {
+@keyframes contact-pageReveal {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes slideLeft {
-  from { opacity: 0; transform: translateX(-60px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes contact-slideLeft {
+  from { transform: translateX(-60px); }
+  to { transform: translateX(0); }
 }
 
-@keyframes slideRight {
-  from { opacity: 0; transform: translateX(60px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes contact-slideRight {
+  from { transform: translateX(60px); }
+  to { transform: translateX(0); }
 }
 
-@keyframes formPop {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes contact-formPop {
+  from { transform: translateY(40px) scale(0.95); }
+  to { transform: translateY(0) scale(1); }
 }
 
-@keyframes glowPulse {
+@keyframes contact-glowPulse {
   from { box-shadow: inset 0 0 10px rgba(255,255,255,0.1); }
   to { box-shadow: inset 0 0 45px rgba(255,255,255,0.25); }
 }
 
-@keyframes cardReveal {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes contact-cardReveal {
+  from { transform: translateY(40px); }
+  to { transform: translateY(0); }
 }
 
-@keyframes iconFloat {
+@keyframes contact-iconFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
-@keyframes textFloat {
+@keyframes contact-textFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
 }
@@ -253,13 +248,13 @@ button:active {
     flex-direction: column;
   }
 
-  .contact-left,
-  .contact-right {
+  .contact-wrapper .contact-left,
+  .contact-wrapper .contact-right {
     width: 100%;
     padding: 60px 30px;
   }
 
-  form {
+  .contact-wrapper form {
     max-width: 100%;
   }
 }
