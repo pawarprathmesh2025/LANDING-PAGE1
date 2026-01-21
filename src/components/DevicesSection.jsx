@@ -1,12 +1,10 @@
 // Swiper core components
 import { Swiper, SwiperSlide } from "swiper/react";
-//import { Pagination, Navigation } from "swiper/modules";
-import { Pagination, Mousewheel  } from "swiper/modules";
+import { Pagination, Mousewheel, Autoplay } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 
 // CSS
 import "./DevicesSection.css";
@@ -19,9 +17,9 @@ import hubImg from "../assets/VG Smart Ordering & Checkout Hub.png";
 
 export default function DevicesSection() {
   return (
-    
     <section className="devices-wrapper">
-         <div className="devices-container"></div>
+      <div className="devices-container"></div>
+
       <div className="devices-badge">OUR DEVICES</div>
 
       <div className="heading">
@@ -34,127 +32,127 @@ export default function DevicesSection() {
         </p>
       </div>
 
+      <Swiper
+        modules={[Pagination, Mousewheel, Autoplay]}
 
+        /* CORE */
+        slidesPerView={2}
+        slidesPerGroup={1}
+        spaceBetween={30}
 
-<Swiper 
-  modules={[Pagination, Mousewheel]}
+        /* AUTO SLIDE ✅ */
+        autoplay={{
+          delay: 3500,                 // slides every 3.5s
+          disableOnInteraction: false, // continue after swipe
+          pauseOnMouseEnter: true,     // pause on hover
+        }}
 
-  /* CORE LOGIC */
-  slidesPerView={2}
-  slidesPerGroup={1}
-  spaceBetween={30}
+        /* INPUT */
+        allowTouchMove={true}
+        simulateTouch={true}
+        grabCursor={true}
 
-  /* SWIPE INPUTS */
-  allowTouchMove={true}
-  simulateTouch={true}
-  grabCursor={true}
+        /* TRACKPAD */
+        mousewheel={{
+          forceToAxis: true,
+          sensitivity: 1,
+        }}
 
-  /* TRACKPAD (2-finger swipe) */
-  mousewheel={{
-    forceToAxis: true,   // horizontal only
-    sensitivity: 1,
-  }}
+        /* UX */
+        speed={700}
 
-  /* UX */
-  speed={600}
-  threshold={10}
+        /* DOTS */
+        pagination={{ clickable: true }}
 
-  /* DOTS */
-  pagination={{ clickable: true }}
+        /* SAFETY */
+        centeredSlides={false}
+        watchOverflow={true}
 
-  /* IMPORTANT */
-  centeredSlides={false}
-  watchOverflow={true}
+        className="devices-swiper"
+      >
+        <SwiperSlide>
+          <DeviceCard
+            title="VG Static Payment Soundbox"
+            desc="A reliable static soundbox that delivers instant voice alerts for every successful payment."
+            image={staticImg}
+            leftList={[
+              "QR Code Payments",
+              "Volume Adjustable",
+              "Real-Time Broadcast",
+              "Compact Size",
+            ]}
+            rightList={[
+              "Dining Rooms",
+              "Restaurants",
+              "Convenience Stores",
+              "Toll Stations",
+            ]}
+          />
+        </SwiperSlide>
 
-  className="devices-swiper"
->
+        <SwiperSlide>
+          <DeviceCard
+            title="VG Dynamic Payment Soundbox"
+            desc="A dynamic soundbox that announces real-time payment confirmation with smart, flexible connectivity."
+            image={dynamicImg}
+            leftList={[
+              "Volume Adjustable",
+              "Real-Time Broadcast",
+              "QR Code + NFC Card Payments",
+              "Amount Display & Input",
+            ]}
+            rightList={[
+              "Restaurants",
+              "Convenience Stores",
+              "Supermarkets",
+              "Shopping Malls",
+              "Hotels",
+              "Toll Stations",
+            ]}
+          />
+        </SwiperSlide>
 
+        <SwiperSlide>
+          <DeviceCard
+            title="VG Smart Pocket Soundbox (with GPS)"
+            desc="A compact smart soundbox with GPS tracking and secure connectivity for mobile merchants."
+            image={pocketImg}
+            leftList={[
+              "QR Code + NFC Payments",
+              "GPS Tracking",
+              "Real-Time Broadcast",
+              "CUG Calling",
+            ]}
+            rightList={[
+              "Transportation",
+              "Logistics",
+              "Parking Lots",
+              "Hawkers",
+              "Gig Workers",
+            ]}
+          />
+        </SwiperSlide>
 
-
-  <SwiperSlide>
-    <DeviceCard
-      title="VG Static Payment Soundbox"
-      desc="A reliable static soundbox that delivers instant voice alerts for every successful payment."
-      image={staticImg}
-      leftList={[
-        "QR Code Payments",
-        "Volume Adjustable",
-        "Real-Time Broadcast",
-        "Compact Size",
-      ]}
-      rightList={[
-        "Dining Rooms",
-        "Restaurants",
-        "Convenience Stores",
-        "Toll Stations",
-      ]}
-    />
-  </SwiperSlide>
-
-  <SwiperSlide>
-    <DeviceCard
-      title="VG Dynamic Payment Soundbox"
-      desc="A dynamic soundbox that announces real-time payment confirmation with smart, flexible connectivity."
-      image={dynamicImg}
-      leftList={[
-        "Volume Adjustable",
-        "Real-Time Broadcast",
-        "QR Code + NFC Card Payments",
-        "Amount Display & Input",
-      ]}
-      rightList={[
-        "Restaurants",
-        "Convenience Stores",
-        "Supermarkets",
-        "Shopping Malls",
-        "Hotels",
-        "Toll Stations",
-      ]}
-    />
-  </SwiperSlide>
-
-  <SwiperSlide>
-    <DeviceCard
-      title="VG Smart Pocket Soundbox (with GPS)"
-      desc="A compact smart soundbox with GPS tracking and secure connectivity for mobile merchants."
-      image={pocketImg}
-      leftList={[
-        "QR Code + NFC Payments",
-        "GPS Tracking",
-        "Real-Time Broadcast",
-        "CUG Calling",
-      ]}
-      rightList={[
-        "Transportation",
-        "Logistics",
-        "Parking Lots",
-        "Hawkers",
-        "Gig Workers",
-      ]}
-    />
-  </SwiperSlide>
-
-  <SwiperSlide>
-    <DeviceCard
-      title="VG Smart Ordering & Checkout Hub"
-      desc="An all-in-one ordering and checkout hub designed for high-volume merchants."
-      image={hubImg}
-      leftList={[
-        "Ordering",
-        "Checkout",
-        "Membership Management",
-        "Queue Management",
-      ]}
-      rightList={[
-        "Hotels",
-        "Retail Chains",
-        "Restaurants",
-        "Logistics",
-      ]}
-    />
-  </SwiperSlide>
-</Swiper>
-
+        <SwiperSlide>
+          <DeviceCard
+            title="VG Smart Ordering & Checkout Hub"
+            desc="An all-in-one ordering and checkout hub designed for high-volume merchants."
+            image={hubImg}
+            leftList={[
+              "Ordering",
+              "Checkout",
+              "Membership Management",
+              "Queue Management",
+            ]}
+            rightList={[
+              "Hotels",
+              "Retail Chains",
+              "Restaurants",
+              "Logistics",
+            ]}
+          />
+        </SwiperSlide>
+      </Swiper>
     </section>
   );
 }
