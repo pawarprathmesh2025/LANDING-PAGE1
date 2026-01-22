@@ -61,6 +61,14 @@ body {
   height: auto; /* scale properly */
   max-width: 450px; /* optional max width */
 }
+.hero h1 {
+    font-size: 70px;
+} 
+.hero-text h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+}
 
 /* ================= TRUSTED CLIENTS ================= */
 .trusted-clients {
