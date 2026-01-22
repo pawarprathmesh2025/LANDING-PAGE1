@@ -203,3 +203,12 @@
     align-items: flex-start;
   }
 }
+
+
+/* ===============================
+   STORE LINK FIX (SAFE & SCOPED)
+================================ */
+.store-link {
+  text-decoration: none;
+  display: inline-block;
+}
