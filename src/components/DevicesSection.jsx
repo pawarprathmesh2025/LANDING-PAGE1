@@ -42,7 +42,7 @@ export default function DevicesSection() {
 
         /* AUTO SLIDE ✅ */
         autoplay={{
-          delay: 3500,                 // slides every 3.5s
+          delay: 900,                 // slides every 3.5s
           disableOnInteraction: false, // continue after swipe
           pauseOnMouseEnter: true,     // pause on hover
         }}
