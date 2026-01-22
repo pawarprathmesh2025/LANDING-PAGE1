@@ -1,5 +1,5 @@
 /* ================= NAVBAR ================= */
-.navbar {
+.home .navbar {
   width: 100%;
   position: sticky;
   top: 0;
@@ -72,7 +72,7 @@
 }
 
 /* ================= HERO ================= */
-.hero {
+.home .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,7 +114,7 @@
 .primary { background: black; color: white; border: none; }
 .secondary { background: transparent; border: 1px solid black; }
 
-.hero-image {
+.home .hero-image {
   width: 450px;
   height: 450px;
   position: absolute;
@@ -171,7 +171,7 @@
     padding: 40px 20px;
   }
   .hero-text { max-width: 100%; }
-  .hero-image {
+ .home .hero-image {
     position: relative;
     width: 300px;
     height: 300px;
@@ -187,7 +187,7 @@
 }
 
 /* ================= TRUSTED CLIENTS ================= */
-.trusted-clients {
+.home .trusted-clients {
   padding: 40px 60px;
   background: linear-gradient(180deg, #ffffff, #f9fafb);
   text-align: center;
@@ -247,7 +247,7 @@
 }
 
 /* ================= STATS ================= */
-.stats-section {
+.home .stats-section {
   padding: 60px 20px;
   background-color: #f9fafb;
   text-align: center;

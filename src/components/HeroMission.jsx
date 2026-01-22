@@ -40,7 +40,7 @@ const HeroMission = () => {
   const headingText = "Transforming Ideas Into";
 
   return (
-    <section className="hero" id="mission">
+    <section className="about-hero" id="mission">
       <div className="hero-container">
         <div className="hero-grid">
 
@@ -90,6 +90,7 @@ const HeroMission = () => {
             </motion.h1>
 
             <motion.p
+             className="hero-description"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
